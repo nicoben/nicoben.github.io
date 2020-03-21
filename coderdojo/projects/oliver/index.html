@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test project for Oliver</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+    <table id="example" style="width: auto;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <button type="submit" id="add-new">Add new row</button>
+    <!-- <input type="button" id="add-new" value="Add new row" /> -->
+
+    <div class="form-popup" id="myForm">
+        <form class="form-container">
+            <h1>Login</h1>
+
+            <label for="name">Name</label>
+            <input type="text" placeholder="Enter name" name="name" id="inp-name" required>
+
+            <label for="position">Position</label>
+            <input type="text" placeholder="Enter position" name="position" id="inp-position" required>
+
+            <label for="office">Office</label>
+            <input type="text" placeholder="Enter office" name="office" id="inp-office" required>
+
+            <label for="age">Age</label>
+            <input type="text" placeholder="Enter age" name="age" id="inp-age" required>
+
+            <label for="start-date">Start date</label>
+            <input type="text" placeholder="Enter start date" name="start-date" id="inp-start-date" required>
+
+            <label for="salary">Salary</label>
+            <input type="text" placeholder="Enter salary" name="salary" id="inp-salary" required>
+
+            <button type="submit" id="submit-btn" class="btn">Submit</button>
+            <button type="submit" id="cancel-btn" class="btn cancel" onclick="closeForm()">Cancel</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    let dt = $('#example').DataTable();
+    loadDataTable(dt);
+
+    $('form').hide();
+
+    $('#add-new').click(() => {
+        resetForm();
+        $('form').show();
+    });
+
+    $('#submit-btn').click(() => {
+        $('form').hide();
+        dt.row.add([
+            $('#inp-name').val(),
+            $('#inp-position').val(),
+            $('#inp-office').val(),
+            $('#inp-age').val(),
+            $('#inp-start-date').val(),
+            $('#inp-salary').val(),
+        ]);
+        // dt.row.add({
+        //     Name: $('#inp-name').val(),
+        //     Position: $('#inp-position').val(),
+        //     Office: $('#inp-office').val(),
+        //     Age: $('#inp-age').val(),
+        //     'Start date': $('#inp-start-date').val(),
+        //     Salary: $('#inp-salary').val(),
+        // });
+        dt.draw();
+        saveDataTable(dt);
+    });
+
+    $('#cancel-btn').click(() => {
+        $('form').hide();
+    });
+
+    $('form').submit(() => {
+        return false;
+    });
+
+    function resetForm() {
+        $('form input').val('');
+    }
+
+    function loadDataTable(dt, key = 'data') {
+        let json = localStorage.getItem(key);
+        let data = JSON.parse(json);
+        if (data !== null) {
+            for (let i = 0; i < data.length; i++) {
+                dt.row.add(data[i]);
+            }
+            dt.draw();
+        }
+    }
+
+    function saveDataTable(dt, key = 'data') {
+        let data = dt.data();
+        data.test = {a: 1, b: 2, c: 3};
+        let json = JSON.stringify(data);
+        localStorage.setItem(key, json);
+    }
+</script>
+
+</html>
