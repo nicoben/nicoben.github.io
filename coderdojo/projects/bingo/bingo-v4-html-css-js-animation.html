@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bingo</title>
+</head>
+
+<body>
+    <h1>Let's play bingo!</h1>
+
+    <table>
+        <tr>
+            <td></td>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><img src="images/hippo.png"></td>
+            <td><img src="images/chick.png"></td>
+            <td><img src="images/cow.png"></td>
+            <td><img src="images/bear.png"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><img src="images/whale.png"></td>
+            <td><img src="images/zebra.png"></td>
+            <td><img src="images/chicken.png"></td>
+            <td><img src="images/pig.png"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><img src="images/owl.png"></td>
+            <td><img src="images/duck.png"></td>
+            <td><img src="images/parrot.png"></td>
+            <td><img src="images/rhino.png"></td>
+        </tr>
+    </table>
+
+    <p>This page uses simple <strong>animations</strong> to make the transitions between the images and the
+        circles smoother.</p>
+
+    <nav>
+        <a href="bingo-v3-html-css-js.html">Previous</a>
+    </nav>
+</body>
+
+<!-- CSS from here -->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: 'Carter One', cursive;
+        font-size: 48pt;
+        color: firebrick;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+    }
+
+    td {
+        border: black solid 3px;
+        width: 200px;
+        height: 200px;
+        font-weight: bold;
+        background-color: lightyellow;
+    }
+
+    tr:first-child td {
+        height: 20px;
+        text-align: center;
+        vertical-align: bottom;
+        border: none;
+        background-color: white;
+    }
+
+    td:first-child {
+        width: 15px;
+        border: none;
+        background-color: white;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+    }
+
+    p {
+        text-align: justify;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    strong {
+        color: firebrick;
+    }
+
+    nav {
+        margin-top: 50px;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        display: inline-block;
+        min-width: 100px;
+        min-height: 20px;
+        background-color: lightgrey;
+        vertical-align: center;
+        text-decoration: none;
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: firebrick;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 15px;
+        border: grey 1px solid;
+    }
+
+    a:hover {
+        background-color: grey;
+        border: black 1px solid;
+    }
+</style>
+
+<!-- Javascript from here  -->
+
+<!-- This line so that we can use jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+    // When an image is clicked....
+    $("img").click(function () {
+        // ...make it disappear
+        $(this).fadeOut(
+            "medium",
+            // ...and when it has disappeared
+            function () {
+                // ...replace it by the circle
+                $(this).attr("src", "images/circle.png");
+                // ...make it smaller (because circle.png is 512x512)
+                $(this).attr("width", "150").attr("height", "150");
+                // ...and finally make the circle appear
+                $(this).fadeIn("medium");
+            });
+    })
+</script>
+
+</html>
