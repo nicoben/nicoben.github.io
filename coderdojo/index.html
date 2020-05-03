@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>🌼 Nicoben's Coderdojo Resources 🌼</h1>
+    <h1>Nicoben's Coderdojo Resources</h1>
 
     <section>
         <h2>Programming with blocks (beginners)</h2>
@@ -118,7 +118,6 @@
                     <a href="https://www.cssportal.com/">cssportal.com</a>
                     <a href="https://html-css-js.com/css/">html-css-js.com</a>
                     <a href="http://www.csszengarden.com/">csszengarden.com</a>
-                    <a href="http://www.csszengarden.com/">csszengarden.com</a>
                 </li>
                 <li><strong>Misc.:</strong>
                     <a href="http://flukeout.github.io/">CSS Diner</a>
@@ -220,7 +219,6 @@
                 <a href="https://appinventor.mit.edu/explore/ai2/tutorials">tutorials</a>
             </li>
             <li><strong>Kodular</strong>:
-            <li><strong>Kodular</strong>:
                 <a href="http://kodular.io">main</a>
                 <a href="http://rendezvous.creator.kodular.io/">check</a>
             </li>
@@ -237,6 +235,7 @@
         <h2>Resources (audio, colors, fonts, icons, images)</h2>
         <ul>
             <li><strong>Audio</strong>: <a href="https://kenney.nl/assets?q=audio">Kenney</a></li>
+            <li><strong>Characters/Emoticons</strong>: <a href="https://html-css-js.com/html/character-codes/">html-css-js.com</a></li>
             <li><strong>Colors</strong>
                 <ul>
                     <li><a href="https://www.w3schools.com/colors/default.asp">Main page</a></li>
@@ -330,6 +329,27 @@
         --main-bg-color: lemonchiffon;
         --main-a-unvisited: darkgreen;
         --main-a-visited: grey;
+
+        --main-emoticon-01: '🍇 ';
+        --main-emoticon-02: '🍋 ';
+        --main-emoticon-03: '🍒 ';
+        --main-emoticon-04: '🍍 ';
+        --main-emoticon-05: '🥑 ';
+        --main-emoticon-06: '🍡 ';
+        --main-emoticon-07: '🌽 ';
+        --main-emoticon-08: '🍑 ';
+        --main-emoticon-09: '🍆 ';
+        --main-emoticon-10: '🍏 ';
+        --main-emoticon-11: '🍓 ';
+        --main-emoticon-12: '🍈 ';
+        --main-emoticon-13: '🥕 ';
+        --main-emoticon-14: '🍎 ';
+        --main-emoticon-15: '🍧 ';
+        --main-emoticon-16: '🍉 ';
+        --main-emoticon-17: '🥗 ';
+        --main-emoticon-18: '🥥 ';
+        --main-emoticon-19: '🥤 ';
+        --main-emoticon-20: '🥔 ';
     }
 
     * {
@@ -337,8 +357,8 @@
     }
 
     body {
-        max-width: 800px;
         margin: auto;
+        padding: 5px;
     }
 
     h1 {
@@ -403,93 +423,57 @@
     }
 
     a+a:before {
-        content: ' 🥕 ';
+        content: ' / ';
         color: black;
     }
 
     /* Icons from https://html-css-js.com/html/character-codes/icons/ */
+    h1:before {
+        content: '🌼 ';
+    }
+
+    h1:after {
+        content: ' 🌼';
+    }
+
     body>section:nth-of-type(1) h2:before {
-        content: '🍇 ';
+        content: var(--main-emoticon-01);
     }
 
     body>section:nth-of-type(2) h2:before {
-        content: '🍈 ';
+        content: var(--main-emoticon-02);
     }
 
     body>section:nth-of-type(3) h2:before {
-        content: '🍉 ';
+        content: var(--main-emoticon-03);
     }
 
     body>section:nth-of-type(4) h2:before {
-        content: '🍋 ';
+        content: var(--main-emoticon-04);
     }
 
     body>section:nth-of-type(5) h2:before {
-        content: '🍎 ';
+        content: var(--main-emoticon-05);
     }
 
     body>section:nth-of-type(6) h2:before {
-        content: '🍆 ';
+        content: var(--main-emoticon-06);
     }
 
     body>section:nth-of-type(7) h2:before {
-        content: '🍍 ';
+        content: var(--main-emoticon-07);
     }
 
     body>section:nth-of-type(8) h2:before {
-        content: '🍡 ';
+        content: var(--main-emoticon-08);
     }
 
     body>section:nth-of-type(9) h2:before {
-        content: '🍏 ';
-    }
-
-    body>section:nth-of-type(10) h2:before {
-        content: '🍓 ';
-    }
-
-    body>section:nth-of-type(11) h2:before {
-        content: '🍒 ';
-    }
-
-    body>section:nth-of-type(12) h2:before {
-        content: '🌽 ';
-    }
-
-    body>section:nth-of-type(13) h2:before {
-        content: '🥕 ';
-    }
-
-    body>section:nth-of-type(14) h2:before {
-        content: '🍑 ';
-    }
-
-    body>section:nth-of-type(15) h2:before {
-        content: '🍧 ';
-    }
-
-    body>section:nth-of-type(16) h2:before {
-        content: '🥑 ';
-    }
-
-    body>section:nth-of-type(17) h2:before {
-        content: '🥤 ';
-    }
-
-    body>section:nth-of-type(18) h2:before {
-        content: '🥥 ';
-    }
-
-    body>section:nth-of-type(19) h2:before {
-        content: '🥗 ';
-    }
-
-    body>section:nth-of-type(20) h2:before {
-        content: '🥔 ';
+        content: var(--main-emoticon-09);
     }
 </style>
 
-<!-- Javascript from here  -->
+<!-- Javascript from here -->
 
 <!-- This line so that we can use jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -500,11 +484,15 @@
     $("section").click(function () {
         $(this).children(":not(h2,h3,h4,h5,h6)").toggle();
         return false;
-    });
+    }
+
+    );
 
     $("a").click(function (e) {
         e.stopPropagation();
-    });
+    }
+
+    );
 </script>
 
 </html>
