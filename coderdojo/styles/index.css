@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap');
+
+:root {
+    --main-color: darkgreen;
+    --main-bg-color: lemonchiffon;
+    --main-a-unvisited: darkgreen;
+    --main-a-visited: grey;
+
+    --emoticon-01: '🍇 ';
+    --emoticon-02: '🍋 ';
+    --emoticon-03: '🍒 ';
+    --emoticon-04: '🍍 ';
+    --emoticon-05: '🥑 ';
+    --emoticon-06: '🍡 ';
+    --emoticon-07: '🌽 ';
+    --emoticon-08: '🍑 ';
+    --emoticon-09: '🍆 ';
+    --emoticon-10: '🍏 ';
+    --emoticon-11: '🍓 ';
+    --emoticon-12: '🍈 ';
+    --emoticon-13: '🥕 ';
+    --emoticon-14: '🍎 ';
+    --emoticon-15: '🍧 ';
+    --emoticon-16: '🍉 ';
+    --emoticon-17: '🥗 ';
+    --emoticon-18: '🥥 ';
+    --emoticon-19: '🥤 ';
+    --emoticon-20: '🥔 ';
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: auto;
+    padding: 10px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 36;
+    background-color: var(--main-color);
+    color: white;
+    padding: 0.5em 0 0.5em 0.5em;
+    border-radius: 15px;
+}
+
+section {
+    margin-top: 1em;
+    padding: 0em 1em 0em 1em;
+    border: 4px dashed var(--main-color);
+    border-radius: 15px;
+    background: var(--main-bg-color);
+}
+
+section>section {
+    margin-bottom: 1em;
+    border-style: solid;
+    background-color: white;
+}
+
+section>h2 {
+    color: var(--main-color);
+    font-size: 18pt;
+    padding-top: 0;
+}
+
+section>h3 {
+    color: var(--main-color);
+    font-size: 18pt;
+    padding-top: 0;
+}
+
+li {
+    margin-top: 0.75em;
+}
+
+li li {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: var(--main-a-unvisited);
+}
+
+a:visited {
+    color: var(--main-a-visited);
+}
+
+a:hover {
+    color: white;
+    background-color: var(--main-a-unvisited);
+}
+
+a+a:before {
+    content: ' / ';
+    color: black;
+}
+
+/* Icons from https://html-css-js.com/html/character-codes/icons/ */
+h1:before {
+    content: '🌼 ';
+}
+
+h1:after {
+    content: ' 🌼';
+}
+
+body>section:nth-of-type(1) h2:before {
+    content: var(--emoticon-01);
+}
+
+body>section:nth-of-type(2) h2:before {
+    content: var(--emoticon-02);
+}
+
+body>section:nth-of-type(3) h2:before {
+    content: var(--emoticon-03);
+}
+
+body>section:nth-of-type(4) h2:before {
+    content: var(--emoticon-04);
+}
+
+body>section:nth-of-type(5) h2:before {
+    content: var(--emoticon-05);
+}
+
+body>section:nth-of-type(6) h2:before {
+    content: var(--emoticon-06);
+}
+
+body>section:nth-of-type(7) h2:before {
+    content: var(--emoticon-07);
+}
+
+body>section:nth-of-type(8) h2:before {
+    content: var(--emoticon-08);
+}
+
+body>section:nth-of-type(9) h2:before {
+    content: var(--emoticon-09);
+}
