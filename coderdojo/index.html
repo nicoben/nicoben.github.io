@@ -525,23 +525,9 @@
 <script>
     $("section").children(":not(h2,h3,h4,h5,h6)").hide();
 
-    // Option 1: click on headers
-
     $("section h2,h3,h4,h5,h6").click(function () {
         $(this).parent().children(":not(h2,h3,h4,h5,h6)").toggle();
-        return false;
     });
-
-    // // Option 2: click on sections
-
-    // $("section").click(function () {
-    //     $(this).children(":not(h2,h3,h4,h5,h6)").toggle();
-    //     return false;
-    // });
-
-    // $("a").click(function (e) {
-    //     e.stopPropagation();
-    // });
 </script>
 
 </html>
