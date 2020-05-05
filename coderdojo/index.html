@@ -13,6 +13,7 @@
     <section>
         <h2>Programming with blocks (beginners)</h2>
         <ul>
+            <li><strong>Games</strong>: <a href="https://blockly.games/">blockly.games</a></li>
             <li><strong>Scratch</strong>: <a href="https://scratch.mit.edu/">main</a></li>
             <li><strong>Snap!</strong>: <a href="https://snap.berkeley.edu/">main</a></li>
             <li><strong>MIT App Inventor</strong>:
@@ -57,6 +58,11 @@
                 <a href="https://www.w3schools.com/python/default.asp">tutorial</a>
                 <a href="https://www.w3schools.com/python/python_examples.asp">examples</a>
                 <a href="https://www.w3schools.com/python/python_reference.asp">reference</a>
+            </li>
+            <li><strong>Learning thru games</strong>:
+                <a href="https://www.codingame.com/">codingame.com</a>
+                <a href="https://py.checkio.org/">CheckIO</a>
+                <a href="https://www.codewars.com/">Codewars</a>
             </li>
             <li><strong>Zetcode tutorials</strong>:
                 <a href="http://zetcode.com/lang/python/">tutorial</a>
@@ -112,18 +118,39 @@
             <h3>Client side</h3>
             <ul>
                 <li><strong>HTML</strong>:
+                    <a href="https://htmldog.com/guides/html/">HTML Dog</a>
                     <a href="https://html-css-js.com/html/">html-css-js.com</a>
                 </li>
                 <li><strong>CSS</strong>:
+                    <a href="https://htmldog.com/guides/css/">HTML Dog</a>
                     <a href="https://www.cssportal.com/">cssportal.com</a>
                     <a href="https://html-css-js.com/css/">html-css-js.com</a>
                     <a href="http://www.csszengarden.com/">csszengarden.com</a>
                 </li>
-                <li><strong>Misc.:</strong>
+                <li><strong>Games:</strong>
                     <a href="http://flukeout.github.io/">CSS Diner</a>
+                    <a href="https://mastery.games/flexboxzombies/">Flexbox Zombies</a>
+                    <a href="http://www.flexboxdefense.com/">Flexbox Defence</a>
+                    <a href="https://flexboxfroggy.com/">Flexbox Froggy</a>
+                    <a href="https://cssgridgarden.com/">Grid Garden</a>
+                </li>
+                <li><strong>Misc.:</strong>
                     <a href="https://rupl.github.io/unfold/">3D unfold</a>
                 </li>
                 <li><strong>Javascript</strong>
+                    <ul>
+                        <li>
+                            <strong>Tutorials:</strong>
+                            <a href="https://htmldog.com/guides/javascript/">HTML Dog</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><strong>Learning thru games</strong>:
+                            <a href="https://alexnisnevich.github.io/untrusted/">Untrusted</a>
+                            <a href="http://play.elevatorsaga.com/">Elevator Saga</a>
+                            <a href="https://www.codewars.com/">Codewars</a>
+                        </li>
+                    </ul>
                     <ul>
                         <li><strong>Udacity</strong>:
                             <a href="https://www.udacity.com/course/javascript-basics--ud804">free course</a>
@@ -204,6 +231,7 @@
         <h2>Creating games</h2>
         <ul>
             <li><strong>Scratch</strong>: <a href="https://scratch.mit.edu/">main</a></li>
+            <li><strong>Phaser</strong>: <a href="http://phaser.io/">main</a></li>
             <li><strong>Godot</strong>:
                 <a href="https://godotengine.org/">main</a>
             </li>
@@ -235,7 +263,7 @@
         <h2>Resources (audio, colors, fonts, icons, images)</h2>
         <ul>
             <li><strong>Audio</strong>: <a href="https://kenney.nl/assets?q=audio">Kenney</a></li>
-            <li><strong>Characters/Emoticons</strong>: 
+            <li><strong>Characters/Emoticons</strong>:
                 <a href="https://html-css-js.com/html/character-codes/">html-css-js.com</a>
                 <a href="http://unicode.org/Public/emoji/12.0/emoji-test.txt">list</a>
             </li>
@@ -270,8 +298,9 @@
                     </li>
                 </ul>
             </li>
-            <li><strong>Data</strong>: 
-                <a href="https://www.fresherslive.com/current-affairs/article/list-of-countries-and-captial-currencies-and-continent-16">countries-capitals-currencies-continents</a>
+            <li><strong>Data</strong>:
+                <a
+                    href="https://www.fresherslive.com/current-affairs/article/list-of-countries-and-captial-currencies-and-continent-16">countries-capitals-currencies-continents</a>
                 <a href="https://datahub.io/core/country-codes">country codes</a>
                 <a href="https://datahub.io/core/currency-codes">currency codes</a>
                 <a href="https://datahub.io/core/continent-codes">continent codes</a>
@@ -288,7 +317,7 @@
                 <a href="https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp">Bootstrap</a>
                 <a href="https://www.w3schools.com/icons/google_icons_intro.asp">Google</a>
             </li>
-            <li><strong>Images</strong>: 
+            <li><strong>Images</strong>:
                 <a href="https://kenney.nl/assets?q=2d">Kenney</a>
                 <a href="https://flagpedia.net/">flags</a>
             </li>
@@ -373,7 +402,7 @@
 
     body {
         margin: auto;
-        padding: 5px;
+        padding: 10px;
     }
 
     h1 {
@@ -496,18 +525,23 @@
 <script>
     $("section").children(":not(h2,h3,h4,h5,h6)").hide();
 
-    $("section").click(function () {
-        $(this).children(":not(h2,h3,h4,h5,h6)").toggle();
+    // Option 1: click on headers
+
+    $("section h2").click(function () {
+        $(this).parent().children(":not(h2,h3,h4,h5,h6)").toggle();
         return false;
-    }
+    });
 
-    );
+    // // Option 2: click on sections
 
-    $("a").click(function (e) {
-        e.stopPropagation();
-    }
+    // $("section").click(function () {
+    //     $(this).children(":not(h2,h3,h4,h5,h6)").toggle();
+    //     return false;
+    // });
 
-    );
+    // $("a").click(function (e) {
+    //     e.stopPropagation();
+    // });
 </script>
 
 </html>
