@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Carter One', cursive;
+    font-size: 48pt;
+    color: forestgreen;
+}
+
+table#grid {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+table#grid td {
+    border: black solid 3px;
+    width: 200px;
+    height: 200px;
+    font-weight: bold;
+    background-color: lightyellow;
+}
+
+table#grid tr:first-child td {
+    height: 20px;
+    text-align: center;
+    vertical-align: bottom;
+    border: none;
+    background-color: white;
+}
+
+table#grid td:first-child {
+    width: 15px;
+    border: none;
+    background-color: white;
+}
+
+table#grid img {
+    display: block;
+    margin: auto;
+}
+
+p#turn {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p#turn img {
+    display: inline;
+}
+
+strong {
+    color: firebrick;
+}
+
+nav {
+    margin-top: 50px;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    display: inline-block;
+    min-width: 100px;
+    min-height: 20px;
+    background-color: lightgrey;
+    vertical-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: firebrick;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 15px;
+    border: grey 1px solid;
+}
+
+a:hover {
+    background-color: grey;
+    border: black 1px solid;
+}
+
+/**********************************************************************************/
+
+/* Firefox old*/
+@-moz-keyframes blink {
+    0% {opacity:1;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+} 
+
+@-webkit-keyframes blink {
+    0% {opacity:1;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+}
+/* IE */
+@-ms-keyframes blink {
+    0% {opacity:1;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+} 
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+    0% {opacity:1;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+} 
+.blink-image {
+    -moz-animation: blink normal 1s infinite ease-in-out; /* Firefox */
+    -webkit-animation: blink normal 1s infinite ease-in-out; /* Webkit */
+    -ms-animation: blink normal 1s infinite ease-in-out; /* IE */
+    animation: blink normal 1s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}
