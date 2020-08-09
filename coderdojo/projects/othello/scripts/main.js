@@ -143,8 +143,8 @@ class Game {
         for (let row = 1; row < this.nrows; row++)
             for (let col = 1; col < this.ncols; col++)
                 if (this.belongsTo(row, col, winner))
-                    this.getImage(row, col).classList.add("blink-image");
+                    this.getImage(row, col).classList.add("winner");
                 else
-                    this.getImage(row, col).style.opacity = "0.4";
-    }
+                this.getImage(row, col).classList.add("loser");
+            }
 }
