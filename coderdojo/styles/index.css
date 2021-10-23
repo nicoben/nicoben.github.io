@@ -151,3 +151,7 @@ body>section:nth-of-type(9) h2:before {
 body>section:nth-of-type(10) h2:before {
     content: var(--emoticon-10);
 }
+
+body>section:nth-of-type(11) h2:before {
+    content: var(--emoticon-11);
+}
