@@ -61,7 +61,9 @@
             <p>otherwise click <b>Join Scratch</b> (at the top right):</p>
             <img src="images/join-scratch.png" alt="Join Scratch button">
 
-            <p>Go to the starter project at <a href="https://scratch.mit.edu/projects/581184007">https://scratch.mit.edu/projects/581184007</a> and click <b>Remix</b> (at the top right):</p>
+            <p>Go to the starter project at <a
+                    href="https://scratch.mit.edu/projects/581184007">https://scratch.mit.edu/projects/581184007</a> and click
+                <b>Remix</b> (at the top right):</p>
             <img src="images/remix.png" alt="Remix button">
 
             <p>When the new project has opened (this takes a few seconds), click <b>Share</b> (at the top):</p>
@@ -79,7 +81,8 @@
                 <li>Create the basic game using the first 20 sprites (<span class="sprite">Object-Dress</span> to <span class="sprite">Object-Ring</span>).</li>
                 <li>Add a guide to explain the game and tell when the game is over. We will add a new sprite for this.</li>
                 <li>Add a button to make flash the objects not found yet. We will use the <span class="sprite">Cheat button</span> sprite for this.</li>
-                <li>Add a button to show a screen with all the objects to find. We will use the <span class="sprite">Help button</span>, <span class="sprite">Help screen</span>, and <span class="sprite">All Objects</span> sprites for this.</li>
+                <li>Add a button to show a screen with all the objects to find. We will use the <span class="sprite">Help button</span>,
+                    <span class="sprite">Help screen</span>, and <span class="sprite">All Objects</span> sprites for this.</li>
             </ol>
         </section>
 
@@ -107,7 +110,8 @@
             <img src="images/stage-click.png" alt="Stage, when click">
             <p>Click it to test that it works. <span class="cat-variables">SCORE</span> should go down.</p>
 
-            <p>Add this script to <span class="sprite">Stage</span> to add one point to the score and remove one from the number of remaining objects when the player makes a good guess:</p>
+            <p>Add this script to <span class="sprite">Stage</span> to add one point to the score and remove one from the number of
+                remaining objects when the player makes a good guess:</p>
             <img src="images/stage-receive-good.png" alt="Stage, when receive good">
             <p>Click it to test that it works. <span class="cat-variables">SCORE</span> should go up and <span class="cat-variables">LEFT</span> should go down.</p>
 
@@ -126,7 +130,8 @@
 
             <p>Add this script to <span class="sprite">Object-Dress</span> to handle when the player clicks it:</p>
             <img src="images/object-click.png" alt="Object, when click">
-            <p>Click it to test that it works. <span class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span> should change, the animation should run and the sprite should disappear.</p>
+            <p>Click it to test that it works. <span class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span>
+                should change, the animation should run and the sprite should disappear.</p>
 
             <p>Add this script to <span class="sprite">Object-Dress</span> to reset it when the game starts:</p>
             <img src="images/object-start.png" alt="Object, when start">
@@ -134,27 +139,37 @@
 
             <p>Test the game:</p>
             <ol>
-                <li>Click the green flag - <span class="sprite">Object-Dress</span> should be visible, <span class="cat-variables">SCORE</span> should be 0 and <span class="cat-variables">LEFT</span> should be 20</li>
-                <li>Click the dress - <span class="sprite">Object-Dress</span> should disappear and <span class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span> should change</li>
+                <li>Click the green flag - <span class="sprite">Object-Dress</span> should be visible, <span
+                        class="cat-variables">SCORE</span> should be 0 and <span class="cat-variables">LEFT</span> should be 20</li>
+                <li>Click the dress - <span class="sprite">Object-Dress</span> should disappear and <span
+                        class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span> should change</li>
                 <li>Click another object - nothing should happen</li>
                 <li>Click the background - <span class="cat-variables">SCORE</span> should go down by 1</li>
                 <li>Click the green flag - <span class="sprite">Object-Dress</span> should become visible again</li>
             </ol>
 
-            <p>Nothing happens when the other objects are clicked because they have no code yet. Let's fix that by copying the code from <span class="sprite">Object-Dress</span> to each of the other objects (from Object-Tricycle to Object-Ring):</p>
+            <p>Nothing happens when the other objects are clicked because they have no code yet. Let's fix that by copying the code
+                from <span class="sprite">Object-Dress</span> to each of the other objects (from Object-Tricycle to Object-Ring):
+            </p>
             <ol>
-                <li>Drag the <span class="cat-my-blocks">define animate</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
-                <li>Drag the <span class="cat-event">when flag clicked</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
-                <li>Drag the <span class="cat-event">when this sprite clicked</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
+                <li>Drag the <span class="cat-my-blocks">define animate</span> block from <span class="sprite">Object-Dress</span> and
+                    drop it on each of the other sprites.</li>
+                <li>Drag the <span class="cat-event">when flag clicked</span> block from <span class="sprite">Object-Dress</span> and
+                    drop it on each of the other sprites.</li>
+                <li>Drag the <span class="cat-event">when this sprite clicked</span> block from <span class="sprite">Object-Dress</span>
+                    and drop it on each of the other sprites.</li>
             </ol>
 
             <p>Test the game:</p>
             <ol>
-                <li>Click the green flag - all the objects should be visible, <span class="cat-variables">SCORE</span> should be 0 and <span class="cat-variables">LEFT</span> should be 20</li>
-                <li>Click an object - it should disappear and <span class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span> should change</li>
+                <li>Click the green flag - all the objects should be visible, <span class="cat-variables">SCORE</span> should be 0 and
+                    <span class="cat-variables">LEFT</span> should be 20</li>
+                <li>Click an object - it should disappear and <span class="cat-variables">SCORE</span> & <span
+                        class="cat-variables">LEFT</span> should change</li>
                 <li>Repeat step 2 until there are no more objects - when done <span class="cat-variables">LEFT</span> should be 0</li>
                 <li>Click the background - <span class="cat-variables">SCORE</span> should go down by 1</li>
-                <li>Click the green flag - all the objects should become visible again, <span class="cat-variables">SCORE</span> should be 0 and <span class="cat-variables">LEFT</span> should be 20</li>
+                <li>Click the green flag - all the objects should become visible again, <span class="cat-variables">SCORE</span> should
+                    be 0 and <span class="cat-variables">LEFT</span> should be 20</li>
             </ol>
             <p>If an object doesn't behave as expected, check that it has the same code as the other objects.</p>
 
@@ -210,12 +225,17 @@
             <img src="images/object-receive-flash.png" alt="Object, when flash">
             <p>Click it to test that it works.</p>
 
-            <p>Test that <span class="sprite">Object-Dress</span> flashes when <span class="sprite">Cheat button</span> is clicked or the <kbd>C</kbd> key is pressed.</p>
+            <p>Test that <span class="sprite">Object-Dress</span> flashes when <span class="sprite">Cheat button</span> is clicked
+                or the <kbd>C</kbd> key is pressed.</p>
 
-            <p>The other objects are not flashing because they have no code yet. Let's fix that by copying the code we just added from <span class="sprite">Object-Dress</span> to each of the other objects (from Object-Tricycle to Object-Ring):</p>
+            <p>The other objects are not flashing because they have no code yet. Let's fix that by copying the code we just added
+                from <span class="sprite">Object-Dress</span> to each of the other objects (from Object-Tricycle to Object-Ring):
+            </p>
             <ol>
-                <li>Drag the <span class="cat-my-blocks">define flash</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
-                <li>Drag the <span class="cat-event">when I receive (Flash objects)</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
+                <li>Drag the <span class="cat-my-blocks">define flash</span> block from <span class="sprite">Object-Dress</span> and
+                    drop it on each of the other sprites.</li>
+                <li>Drag the <span class="cat-event">when I receive (Flash objects)</span> block from <span
+                        class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
             </ol>
 
             <p>Test that all the objects flash when <span class="sprite">Cheat button</span> is clicked or the <kbd>C</kbd> key is pressed.</p>
@@ -251,10 +271,16 @@
             <p>Let's fix issue #1 by adding these scripts to <span class="sprite">Stage</span>:</p>
             <img src="images/stage-help.png" alt="Stage, help">
 
-            <p>Let's fix issue #2 by adding a <span class="cat-looks">go to [front] layer</span> block at the end of the <span class="cat-my-blocks">define show</span> block in <span class="sprite">Help screen</span>:</p>
+            <p>Let's fix issue #2 by adding a <span class="cat-looks">go to [front] layer</span> block at the end of the <span
+                    class="cat-my-blocks">define show</span> block in <span class="sprite">Help screen</span>:</p>
             <img src="images/help-screen-show-fix.png" alt="Stage, show fix">
 
-            <p>To fix issue #3 we are going to use <span class="sprite">All Objects</span>. It contains 20 costumes, one per object to find. We are going to create 20 <b>clones</b>. Each clone will show a different costume and we will arrange the clones in a grid with 4 rows and 5 columns. Each clone will also have its own <span class="cat-variables">id</span> variable which will contain a number between 1 and 20. This variable will be used to select the right costume and also to display the right description when the clone is clicked. <span class="sprite">All Objects</span> already contains a <span class="cat-list">descriptions</span> list with a description for each object.</p>
+            <p>To fix issue #3 we are going to use <span class="sprite">All Objects</span>. It contains 20 costumes, one per object
+                to find. We are going to create 20 <b>clones</b>. Each clone will show a different costume and we will arrange the
+                clones in a grid with 4 rows and 5 columns. Each clone will also have its own <span class="cat-variables">id</span>
+                variable which will contain a number between 1 and 20. This variable will be used to select the right costume and
+                also to display the right description when the clone is clicked. <span class="sprite">All Objects</span> already
+                contains a <span class="cat-list">descriptions</span> list with a description for each object.</p>
 
             <p>Make an <span class="cat-variables">id</span> variable to differentiate the clones from each other:</p>
             <img src="images/make-variable.png" alt="All Objects, make variable">
