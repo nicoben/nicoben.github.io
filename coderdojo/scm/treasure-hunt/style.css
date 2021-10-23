@@ -1,0 +1,165 @@
+html {
+    max-width: 80ch;
+    padding: 3em 1em;
+    margin: auto;
+    line-height: 1.5;
+    font-size: 1.25em;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+#what-next>section {
+    border: solid 2px;
+    border-radius: 10pt;
+    margin-bottom: 10pt;
+    padding-left: 10pt;
+    padding-right: 10pt;
+}
+
+#what-next>section>p.study::before {
+    content: "📗 ";
+}
+
+#what-next>section>p.idea::before {
+    content: "💡 ";
+}
+
+#what-next>section>p.advanced::before {
+    content: "🚀 ";
+}
+
+#what-next>section>div {
+    border-top: solid 2px darkgrey;
+}
+
+img {
+    margin-left: 3em;
+}
+
+kbd {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #000000;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+span.sprite {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: lightgrey;
+    padding: 0 0.25em;
+    color: #000000;
+    white-space: nowrap;
+}
+
+span.costume, span.sound {
+    border: 2px dotted black;
+    border-radius: 3pt;
+    background-color: white;
+    padding: 0 0.25em;
+    color: #000000;
+    white-space: nowrap;
+}
+
+span.cat-motion {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #4C97FF;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-looks {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #9966FF;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-sound {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #D65CD6;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-event {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #FFD500;
+    padding: 0 0.25em;
+    color: #000000;
+    white-space: nowrap;
+}
+
+span.cat-control {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #FFAB19;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-sensing {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #4CBFE6;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-operators {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #40BF4A;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-variables {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #FF8C1A;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-list {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #FF661A;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-my-blocks {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #FF6680;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+span.cat-extension {
+    border: 1px solid black;
+    border-radius: 3pt;
+    background-color: #0FBD8C;
+    padding: 0 0.25em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}

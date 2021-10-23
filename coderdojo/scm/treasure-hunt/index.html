@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <h1>Project title:</h1>
+        <p>Treasure Hunt with the Science Museum</p>
+    </section>
+
+    <section>
+        <h1>What you will make:</h1>
+        <p>A fun game where you need to find hidden objects from the Science Museum.</p>
+        <p>You can see the finished game here: <a
+                href="https://scratch.mit.edu/projects/581339270">https://scratch.mit.edu/projects/581339270</a>.</p>
+    </section>
+
+    <section>
+        <h1>What you will learn:</h1>
+        <ul>
+            <li>How to sign up to Scratch to save and share your work</li>
+            <li>How to copy a Scratch project and modify it (remixing)</li>
+            <li>How to use variables to keep track of the score, etc</li>
+            <li>How to detect when the mouse is clicked or when keys are pressed</li>
+            <li>How to create your own blocks</li>
+            <li>How to hide and show sprites, resize them, position them, etc</li>
+            <li>How to create buttons</li>
+            <li>How to broadcast and receive messages</li>
+            <li>How to use clones to avoid repetition</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>What you will need:</h1>
+        <ul>
+            <li>A computer or a laptop with access to Internet</li>
+            <li>Scratch Developer Chrome extension (optional)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Instructions:</h1>
+
+        <section>
+            <h2>Getting started</h2>
+
+            <p>Go to the Scratch website at <a href="https://scratch.mit.edu/">https://scratch.mit.edu.</a> or click the Scratch logo:</p>
+            <a href="https://scratch.mit.edu/"><img src="images/scratch-logo.png" alt="Scratch logo"></a>
+
+            <p>You should sign in or join Scratch to be able to save your work and share it with others.</p>
+            <p>If you already have a Scratch account, click <b>Sign In</b> (at the top right):</p>
+            <img src="images/sign-in.png" alt="Sign-In button">
+            <p>otherwise click <b>Join Scratch</b> (at the top right):</p>
+            <img src="images/join-scratch.png" alt="Join Scratch button">
+
+            <p>Go to the starter project at <a href="https://scratch.mit.edu/projects/581184007">https://scratch.mit.edu/projects/581184007</a> and click <b>Remix</b> (at the top right):</p>
+            <img src="images/remix.png" alt="Remix button">
+
+            <p>When the new project has opened (this takes a few seconds), click <b>Share</b> (at the top):</p>
+            <img src="images/share.png" alt="Share button">
+        </section>
+
+        <section>
+            <h2>Overview</h2>
+
+            <p>The project we just copied already contains 24 sprites but (almost) no code yet.</p>
+
+            <p>We will develop the game in 4 steps:</p>
+
+            <ol>
+                <li>Create the basic game using the first 20 sprites (<span class="sprite">Object-Dress</span> to <span class="sprite">Object-Ring</span>).</li>
+                <li>Add a guide to explain the game and tell when the game is over. We will add a new sprite for this.</li>
+                <li>Add a button to make flash the objects not found yet. We will use the <span class="sprite">Cheat button</span> sprite for this.</li>
+                <li>Add a button to show a screen with all the objects to find. We will use the <span class="sprite">Help button</span>, <span class="sprite">Help screen</span>, and <span class="sprite">All Objects</span> sprites for this.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Step 1 - Create the basic game</h2>
+
+            <p>Click on <span class="sprite">Stage</span> (at the bottom right):</p>
+            <img src="images/stage.png" alt="Stage">
+
+            <p>Make a <span class="cat-variables">SCORE</span> variable to keep track of the score:</p>
+            <img src="images/make-variable.png" alt="Stage, make variable">
+            <br>
+            <img src="images/new-variable-SCORE.png" alt="Stage, new variable SCORE">
+
+            <p>Make a <span class="cat-variables">LEFT</span> variable to keep track of the number of remaining objects.</p>
+
+            <p>Move <span class="cat-variables">SCORE</span> to the bottom left corner and <span class="cat-variables">LEFT</span> to the bottom right corner:</p>
+            <img src="images/stage-1.png" alt="Stage, phase 1">
+
+            <p>Add this script to <span class="sprite">Stage</span> to reset the variables when the game starts:</p>
+            <img src="images/stage-start.png" alt="Stage, when start">
+            <p>Click it to test that it works. <span class="cat-variables">SCORE</span> should show 0 and <span class="cat-variables">LEFT</span> 20.</p>
+
+            <p>Add this script to <span class="sprite">Stage</span> to remove one point from the score when the player makes a wrong guess:</p>
+            <img src="images/stage-click.png" alt="Stage, when click">
+            <p>Click it to test that it works. <span class="cat-variables">SCORE</span> should go down.</p>
+
+            <p>Add this script to <span class="sprite">Stage</span> to add one point to the score and remove one from the number of remaining objects when the player makes a good guess:</p>
+            <img src="images/stage-receive-good.png" alt="Stage, when receive good">
+            <p>Click it to test that it works. <span class="cat-variables">SCORE</span> should go up and <span class="cat-variables">LEFT</span> should go down.</p>
+
+            <p>Now let's add some code to <span class="sprite">Object-Dress</span>. So click on this sprite.</p>
+            <img src="images/object.png" alt="Object">
+
+            <p>Create a variable which will be used to restore the objects to their original size:</p>
+            <ul>
+                <li>Go to the <b>Variables</b> blocks (orange).</li>
+                <li>Click <b>Make a Variable</b>, name it <span class="cat-variables">ORIGINAL SIZE</span> and <b>untick it</b> to stop showing it on the stage.</li>
+            </ul>
+
+            <p>Add a custom block to <span class="sprite">Object-Dress</span> to animate it:</p>
+            <img src="images/object-animate.png" alt="Object, animate custom block">
+            <p>Click it to test that it works. There should be a pop sound and the sprite should grow bigger then return to its original size.</p>
+
+            <p>Add this script to <span class="sprite">Object-Dress</span> to handle when the player clicks it:</p>
+            <img src="images/object-click.png" alt="Object, when click">
+            <p>Click it to test that it works. <span class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span> should change, the animation should run and the sprite should disappear.</p>
+
+            <p>Add this script to <span class="sprite">Object-Dress</span> to reset it when the game starts:</p>
+            <img src="images/object-start.png" alt="Object, when start">
+            <p>Click it to test that it works. The sprite should become visible again.</p>
+
+            <p>Test the game:</p>
+            <ol>
+                <li>Click the green flag - <span class="sprite">Object-Dress</span> should be visible, <span class="cat-variables">SCORE</span> should be 0 and <span class="cat-variables">LEFT</span> should be 20</li>
+                <li>Click the dress - <span class="sprite">Object-Dress</span> should disappear and <span class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span> should change</li>
+                <li>Click another object - nothing should happen</li>
+                <li>Click the background - <span class="cat-variables">SCORE</span> should go down by 1</li>
+                <li>Click the green flag - <span class="sprite">Object-Dress</span> should become visible again</li>
+            </ol>
+
+            <p>Nothing happens when the other objects are clicked because they have no code yet. Let's fix that by copying the code from <span class="sprite">Object-Dress</span> to each of the other objects (from Object-Tricycle to Object-Ring):</p>
+            <ol>
+                <li>Drag the <span class="cat-my-blocks">define animate</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
+                <li>Drag the <span class="cat-event">when flag clicked</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
+                <li>Drag the <span class="cat-event">when this sprite clicked</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
+            </ol>
+
+            <p>Test the game:</p>
+            <ol>
+                <li>Click the green flag - all the objects should be visible, <span class="cat-variables">SCORE</span> should be 0 and <span class="cat-variables">LEFT</span> should be 20</li>
+                <li>Click an object - it should disappear and <span class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span> should change</li>
+                <li>Repeat step 2 until there are no more objects - when done <span class="cat-variables">LEFT</span> should be 0</li>
+                <li>Click the background - <span class="cat-variables">SCORE</span> should go down by 1</li>
+                <li>Click the green flag - all the objects should become visible again, <span class="cat-variables">SCORE</span> should be 0 and <span class="cat-variables">LEFT</span> should be 20</li>
+            </ol>
+            <p>If an object doesn't behave as expected, check that it has the same code as the other objects.</p>
+
+            <p>Now that the basic game works we will improve it little by little in the next sections. We will add:</p>
+            <ul>
+                <li>a <b>guide</b> character to explain what the game is about and when the game is over;</li>
+                <li>a <b>Cheat</b> button to make the remaining objects flash; and</li>
+                <li>a <b>Help</b> button to present all the objects and their descriptions.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Step 2 - Add the guide</h2>
+
+            <p>Click the new sprite icon:</p>
+            <img src="images/choose-sprite.png" alt="Choose sprite">
+
+            <p>Pick <span class="costume">Marian</span> from the People category or somebody else. Move the spite until the feet are at the bottom of the stage.</p>
+
+            <p>Under the Sounds tab, click the new sound icon:</p>
+            <img src="images/choose-sound.png" alt="Choose sound">
+            <p>and choose <span class="sound">Mystery</span> from the Loops category. Repeat and choose <span class="sound">Triumph</span> from the same category.</p>
+
+            <p>Add this script to <span class="sprite">Marian</span> to display the instructions at the <b>start</b> of the game:</p>
+            <img src="images/guide-when-start.png" alt="Guide">
+            <p>Click it to test that it works. The guide should pop up and disappear after the music is over.</p>
+            <img src="images/guide-start.png" alt="Guide at start">
+
+            <p>Add this script to <span class="sprite">Marian</span> to signal the <b>end</b> of the game:</p>
+            <img src="images/guide-when-receive-over.png" alt="Guide">
+            <p>Click it to test that it works. The guide should pop up and stay on the stage after the music is over.</p>
+            <img src="images/guide-end.png" alt="Guide at end">
+
+            <p>Test the game:</p>
+            <ol>
+                <li>Click the green flag - the guide should appear then disappear</li>
+                <li>Click all the object</li>
+                <li>The guide should appear when the game is over</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Step 3 - Add the Cheat button</h2>
+
+            <p>Add the following scripts to <span class="sprite">Cheat button</span>.</p>
+            <img src="images/cheat-button-1.png" alt="Cheat button">
+
+            <p>Add a custom block to <span class="sprite">Object-Dress</span> to flash it:</p>
+            <img src="images/object-flash.png" alt="Object, flash custom block">
+            <p>Click it to test that it works.</p>
+
+            <p>Add this script to <span class="sprite">Object-Dress</span> to handle when the flash message is received:</p>
+            <img src="images/object-receive-flash.png" alt="Object, when flash">
+            <p>Click it to test that it works.</p>
+
+            <p>Test that <span class="sprite">Object-Dress</span> flashes when <span class="sprite">Cheat button</span> is clicked or the <kbd>C</kbd> key is pressed.</p>
+
+            <p>The other objects are not flashing because they have no code yet. Let's fix that by copying the code we just added from <span class="sprite">Object-Dress</span> to each of the other objects (from Object-Tricycle to Object-Ring):</p>
+            <ol>
+                <li>Drag the <span class="cat-my-blocks">define flash</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
+                <li>Drag the <span class="cat-event">when I receive (Flash objects)</span> block from <span class="sprite">Object-Dress</span> and drop it on each of the other sprites.</li>
+            </ol>
+
+            <p>Test that all the objects flash when <span class="sprite">Cheat button</span> is clicked or the <kbd>C</kbd> key is pressed.</p>
+        </section>
+
+        <section>
+            <h2>Step 4 - Add the Help button</h2>
+
+            <p>Add the following scripts to <span class="sprite">Help button</span> sprite.</p>
+            <img src="images/help-button.png" alt="Help button">
+
+            <p>Make a <span class="cat-variables">help visible?</span> variable for <span class="sprite">Help screen</span> <b>only</b>:</p>
+            <img src="images/make-variable.png" alt="Stage, make variable">
+            <br>
+            <img src="images/help-screen-variable.png" alt="Stage, new variable LEFT">
+
+            <p>Add these custom blocks to <span class="sprite">Help screen</span>:</p>
+            <img src="images/help-screen-custom.png" alt="Help screen, custom blocks">
+            
+            <p>Add these scripts to <span class="sprite">Help screen</span>:</p>
+            <img src="images/help-screen-scripts.png" alt="Help screen, scripts">
+
+            <p>Test by clicking <span class="sprite">Help button</span> or pressing the <kbd>C</kbd> key:</p>
+            <img src="images/help-screen-problems.png" alt="Help screen, issues">
+
+            <p>There are programming mistakes (bugs) here:</p>
+            <ol>
+                <li><span class="cat-variables">SCORE</span> & <span class="cat-variables">LEFT</span> should not be visible when the help screen is up.</li>
+                <li>The objects to be clicked should not be visible.</li>
+                <li>The help screen does not list the objects.</li>
+            </ol>
+
+            <p>Let's fix issue #1 by adding these scripts to <span class="sprite">Stage</span>:</p>
+            <img src="images/stage-help.png" alt="Stage, help">
+
+            <p>Let's fix issue #2 by adding a <span class="cat-looks">go to [front] layer</span> block at the end of the <span class="cat-my-blocks">define show</span> block in <span class="sprite">Help screen</span>:</p>
+            <img src="images/help-screen-show-fix.png" alt="Stage, show fix">
+
+            <p>To fix issue #3 we are going to use <span class="sprite">All Objects</span>. It contains 20 costumes, one per object to find. We are going to create 20 <b>clones</b>. Each clone will show a different costume and we will arrange the clones in a grid with 4 rows and 5 columns. Each clone will also have its own <span class="cat-variables">id</span> variable which will contain a number between 1 and 20. This variable will be used to select the right costume and also to display the right description when the clone is clicked. <span class="sprite">All Objects</span> already contains a <span class="cat-list">descriptions</span> list with a description for each object.</p>
+
+            <p>Make an <span class="cat-variables">id</span> variable to differentiate the clones from each other:</p>
+            <img src="images/make-variable.png" alt="All Objects, make variable">
+            <br>
+            <img src="images/new-variable-id.png" alt="All Objects, new variable id">
+
+            <p>Add a custom block to <span class="sprite">All Objects</span>:</p>
+            <img src="images/all-objects-custom.png" alt="All Objects, custom blocks">
+
+            <p>Add these scripts to <span class="sprite">All Objects</span>:</p>
+            <img src="images/all-objects-scripts.png" alt="All Objects, scripts">
+
+            <p>Test by clicking <span class="sprite">Help button</span> or pressing the <kbd>H</kbd> key.</p>
+            <img src="images/help-screen-final.png" alt="Help screen, final">
+            <p>Clicking on an object should display its description.</p>
+        </section>
+    </section>
+
+    <section id="what-next">
+        <h1>What next?</h1>
+
+        <p>Click the boxes to expand them.</p>
+
+        <section x-data="{open: false}">
+            <p class="study" @click="open = !open">Watch videos by <strong>Surfing Scratcher</strong> and improve your Scratch skills.</p>
+            <div x-show="open">
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=-kKMV-iCpy0">Project editor</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=VhfEcEj0fSc&t=76s">Blocks overview</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=3HBUFTUElqk">Motion blocks</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=l8WTAYxFYWg">Looks blocks</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=jDNmpEsDRSU">Sound blocks & sound editor</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=_4pCzOTE8PY">Events blocks (including messages broadcast)</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=cwtPPXEPB8M&t=478s">Control blocks</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=A5SVWU82M7I">Sensing blocks</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=t8tQETY8j_M&t=180s">Operator blocks</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=wS1QETPfgGE&t=54s">Variables</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=1rb226XBBMo&t=3s">Lists</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=Q0JecvzwyIg">Functions (My Blocks)</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=rQsMSamqDvM&t=4s">Clones and Local Variables</a></li>
+                </ul>
+                <p>And plenty more on his YouTube <a href="https://www.youtube.com/c/SurfingScratcher">channel</a>.</p>
+            </div>
+        </section>
+
+        <section x-data="{open: false}">
+            <p class="study" @click="open = !open">Watch videos by <strong>Scratch Team</strong> and make fun projects.</p>
+            <div x-show="open">
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=4v1CIKehF6E&list=PLpfxVARjkP-_f-E9IU6IHmy5ECj0HqiLB&index=1">How to Make a Clicker Game in Scratch</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=7NN5v2wSL4U&list=PLpfxVARjkP-_f-E9IU6IHmy5ECj0HqiLB&index=6&t=33s">How to Make a Catch Game in Scratch</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=1jHvXakt1qw&list=PLpfxVARjkP-_f-E9IU6IHmy5ECj0HqiLB&index=7">How to Make a Jumping Game in Scratch</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=eekrc3Xs9Z0&list=PLpfxVARjkP-_f-E9IU6IHmy5ECj0HqiLB&index=3">How to Make a Virtual Town in Scratch</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=-3oCdNIeU_8&list=PLpfxVARjkP-_f-E9IU6IHmy5ECj0HqiLB&index=4">How to Make a Character Designer in Scratch</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=irhNLRWwhv0&list=PLpfxVARjkP-_f-E9IU6IHmy5ECj0HqiLB&index=8">How to Make a Virtual Pet in Scratch</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=CvSOVWyyjJI&list=PLpfxVARjkP-_f-E9IU6IHmy5ECj0HqiLB&index=5">How to Make a Scrolling Background in Scratch</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=TZu2QwkYQm0">How to Make a Mouse Trail in Scratch</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=8vHEqVdWn08&list=PLpfxVARjkP-_f-E9IU6IHmy5ECj0HqiLB&index=12">Video Sensing in Scratch</a></li>
+                </ul>
+                <p>And plenty more on their YouTube <a href="https://www.youtube.com/c/ScratchTeam">channel</a>.</p>
+            </div>
+        </section>
+
+        <section x-data="{open: false}">
+            <p class="study" @click="open = !open">Discover the power of <strong>clones</strong>.</p>
+            <div x-show="open">
+                <p>You already met Scratch clones in step 4 of this activity. There we created 20 clones of <span class="sprite">All
+                        Objects</span> to display all the objects in the help screen.</p>
+                <p>A clone is a <strong>temporary copy</strong> of a sprite created by <span class="cat-control">create clone of
+                        ()</span>. Each clone has its own attributes like position, direction, size, color, and pen. Variables can also be used to differentiate
+                    multiple clones of the same sprite (like <span class="cat-variables">id</span> in <span class="sprite">All
+                        Objects</span>). All the clones are deleted automatically when the
+                    project is stopped or restarted. A clone can also delete itself with <span class="cat-control">delete this
+                        clone</span>. When a clone is created it will execute the code under <span class="cat-control">when I start as a
+                        clone</span>.</p>
+                <p>Clones are for example used to create projectiles or enemies in shooting games, to create a school of fish in
+                    underwater games, for special effects, etc.</p>
+                <p>Here are a few resources to find out more about clones:</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=TZu2QwkYQm0">video by Scratch Team</a> showing how to use clones to create a mouse trail</li>
+                    <li><a href="https://www.youtube.com/watch?v=rQsMSamqDvM&t=4s">video by Surfing Scratcher</a> showing how to use clones to shoot bullets</li>
+                    <li><a href="https://scratch-tutorial.readthedocs.io/fr/latest/5_clone/clone.html#">tutorial</a> with lots of sample Scratch projects</li>
+                </ul>
+            </div>
+        </section>
+
+        <section x-data="{open: false}">
+            <p class="idea" @click="open = !open"><strong>Idea #1</strong> - Change some of the animations when the objects are clicked.</p>
+            <div x-show="open">
+                <p>Choose an object and modify the code under <span class="cat-my-blocks">define animate</span>. For example you could:</p>
+                <ul>
+                    <li>make the tricycle move using <span class="cat-motion">glide () secs to x: () y: ()</span></li>
+                    <li>make the propeller spin using <span class="cat-motion">turn left () degrees</span> and/or <span class="cat-motion">turn right () degrees</span></li>
+                    <li>make the dress change color using <span class="cat-looks">change [color] effect by ()</span></li>
+                    <li>make the television fade out using <span class="cat-looks">change [ghost] effect by ()</span></li>
+                    <li>make the phones ring or the radio play music using <span class="cat-sound">play sound ()</span></li>
+                    <li>make the microphone say something like <em>"Test 1 2 3"</em> using <span class="cat-extension">speak ()</span> (part of the Text to Speech extension)</li>
+                </ul>
+                <p>Don't be shy! Use your imagination! 🤪</p>
+            </div>
+        </section>
+
+        <section x-data="{open: false}">
+            <p class="idea" @click="open = !open"><strong>Idea #2</strong> - Make <span class="sprite">Marian</span> say something else when <span class="sprite">Cheat button</span> was used.</p>
+            <div x-show="open">
+                <p>Currently <span class="sprite">Marian</span> always says <em>"Well done. You made it!"</em> at the end of the game.
+                    Make her say something like <em>"Well done. You made it! But you cheated..."</em> if the player used <span class="sprite">Cheat button</span>.</p>
+                <p><strong>Hint</strong>: You will probably need a new <span class="cat-variables">CHEAT CLICKED?</span> variable (initialized to "no" at the start of the game).</p>
+            </div>
+        </section>
+
+        <section x-data="{open: false}">
+            <p class="idea" @click="open = !open"><strong>Idea #3</strong> - Make the objects go to different positions.</p>
+            <div x-show="open">
+                <p>Currently the game is a bit boring because the objects are always at the same positions.</p>
+                <p>One way to improve this is to make each object go to a random position using <span class="cat-motion">go to (random
+                        position)</span> when the game starts. However this has the disadvantage that the objects could overlap each
+                    other or be too easy to see against the backdrop.</p>
+                <p><strong>Challenge</strong>: Can you think of a better solution?</p>
+            </div>
+        </section>
+
+        <section x-data="{open: false}">
+            <p class="idea" @click="open = !open"><strong>Idea #4</strong> - Use clones to replace the 20 object sprites.</p>
+            <div x-show="open">
+                <p>Currently we have separate sprites for the objects to find and we had to copy all the code from <span
+                        class="sprite">Object-Dress</span> into the 19 other sprites. All this copying is very tedious and is bad
+                    practice in general. For example think about how slow it would be to modify <span class="cat-my-blocks">define
+                        animate</span> for the 20 sprites.</p>
+                <p>A better option is have a sprite with one costume per object and clone it. This sounds like <span class="sprite">All
+                        Objects</span> and we could modify its code but it will be simpler to duplicate it instead. Duplication is bad in
+                    general but we have to be careful not to break the <span class="sprite">All Objects</span> code arleady in place for
+                    the help screen. At a high level we need to:</p>
+                <ol>
+                    <li>Duplicate <span class="sprite">All Objects</span></li>
+                    <li>Copy the code from <span class="sprite">Object-Dress</span> into the new sprite</li>
+                    <li>Delete the 20 sprites (<span class="sprite">Object-Dress</span> to <span class="sprite">Object-Ring</span>)</li>
+                    <li>Make the new sprite create 20 clones at start up (each clone has a different <span class="cat-variables">id</span>)</li>
+                    <li>When a clone starts:
+                        <ul>
+                            <li>change its costume</li>
+                            <li>set its position, direction and size</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>One option to position each clone is to have an <span class="cat-control">if &lt;&gt; then</span> block for each
+                    object:</p>
+                <img src="images/idea4-option1.png" alt="Naive option">
+                <p>but this means lots of code and will not scale up well. A better solution is to have lists with the position, the direction and the size of each
+                    object and the code becomes very simple:</p>
+                <img src="images/idea4-option2.png" alt="Better option">
+            </div>
+        </section>
+
+        <section x-data="{open: false}">
+            <p class="idea" @click="open = !open"><strong>Idea #5</strong> - Modify the help screen to grey out the objects already found.</p>
+            <div x-show="open">
+                <p>Currently the help screen displays all the objects the same. It would be much better if it would grey out the
+                    objects which have already been found.</p>
+                <p>Greying out a sprite can be done easily using <span class="cat-looks">set [ghost] effect to ()</span>. But how do you
+                    keep track of what objects have already been found?</p>
+                <p><strong>Hint #1</strong>: You will probably need a new <span class="cat-list">OBJECT IDS FOUND</span> list which will
+                    be reset every time the game starts. When an object is clicked, its <span class="cat-variables">id</span> will be
+                    added to the list.</p>
+                <p><strong>Hint #2</strong>: It will be easier to do this task after idea #4 is complete.</p>
+            </div>
+        </section>
+
+        <section x-data="{open: false}">
+            <p class="advanced" @click="open = !open">Convert a Scratch project to <strong>JavaScript</strong> with Leopard.</p>
+            <div x-show="open">
+                <p>Scratch is an awesome environment <strong>for beginners</strong> and amazing projects can be achieved with it but it
+                    has limitations. So you will probably want to move to a programming language like <strong>Python</strong> or
+                    <strong>JavaScript</strong> in the future. In these languages the code is described using text instead of blocks but
+                    most of the concepts stay the same.
+                </p>
+                <p>Go to <a href="http://leopardjs.com">leopardjs.com</a>, enter the URL of your Scratch project (which must be shared) and click the Edit button.</p>
+                <img src="images/leopard-auto.png" alt="Leopard, automatic" width="675" height="300">
+                <p>After a few seconds you should see the JavaScript code. For example the code for <span class="sprite">Marian</span> will look like this:</p>
+                <img src="images/leopard-code.png" alt="Leopard, code" width="600" height="220">
+                <p>The Manual page explains how each Scratch block gets translated to JavaScript:</p>
+                <img src="images/leopard-manual.png" alt="Leopard, manual" width="675" height="472">
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
