@@ -1,0 +1,50 @@
+{
+    "assets": {
+        "script": [
+            {
+                "Game": {
+                    "type": "game script",
+                    "start": "foo = new_object(\"Foo\")\nbar = new_object(\"Bar\")\n",
+                    "loop": ""
+                }
+            },
+            {
+                "Foo": {
+                    "type": "object script",
+                    "start": "self.sprite = new_sprite(\"foo.png\")\nself.x = -200\n\nself.text = new_text(\"Normal class\", -275, 150)\nself.text.color = \"white\"\nself.text.fontFamily = \"roboto\"\n",
+                    "loop": "self.angle += 0.5\r\n"
+                }
+            }
+        ],
+        "room": [],
+        "texture": [
+            {
+                "foo.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.33310.659361.1663568079.foo.png"
+                }
+            },
+            {
+                "bar.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.33310.659361.1663523165.bar.png"
+                }
+            }
+        ],
+        "sound": [],
+        "function": [
+            {
+                "base.py": {
+                    "type": "function script",
+                    "head": "class GameObject(superclass):\n\n    def __init__(self, sprite=None):\n        self._type = \"object script\"\n        super().__init__(sprite)\n        add_room_object(self)\n        self.start()\n\n    def start(self):\n        pass\n\n    def loop(self):\n        pass\n"
+                }
+            },
+            {
+                "bar.py": {
+                    "type": "function script",
+                    "head": "class Bar(GameObject):\n\n    def start(self):\n        self.sprite = new_sprite(\"bar.png\")\n        self.x = 200\n\n        self.text = new_text(\"Custom class\", 115, 150)\n        self.text.color = \"white\"\n        self.text.fontFamily = \"roboto\"\n\n    def loop(self):\n        self.angle += 0.5\n"
+                }
+            }
+        ]
+    }
+}
