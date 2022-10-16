@@ -18,5 +18,5 @@ while True:
     led_r2.value = not led_r1.value
     led_a2.value = not led_a1.value
     led_g2.value = not led_g1.value
-    sleep(0.5)
+    sleep(1)
     count += 1
